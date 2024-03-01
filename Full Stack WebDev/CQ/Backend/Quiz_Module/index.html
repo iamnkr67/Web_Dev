@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz Module</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Quiz</h1>
+    <div id="quiz-container">
+
+      <div id="question"></div>
+      <form id="options"></form>
+      <button id="submit">Submit</button>
+      <div style="display: flex; justify-content: space-between;">
+        <button
+          id="next"
+          style="
+            display: none;
+            color: #ffff;
+            background-color: green;
+          "
+        >
+          Next
+        </button>
+         <div id="status"></div>
+      </div>
+    </div>
+
+    <h2 id="Answer" style="display: none">Answer Key</h2>
+    <div id="score" style="display: none"></div>
+    <div id="display" style="display: none">
+      <div id="answerKey" style="display: none"></div>
+    <button
+      id="restart"
+      style="
+        display: block;
+        background-color: aqua;
+        color: aliceblue;
+        margin: 10px 0px;  
+      "
+    >
+      Restart
+    </div>
+    </button>
+    <script src="quiz.js"></script>
+  </body>
+</html>

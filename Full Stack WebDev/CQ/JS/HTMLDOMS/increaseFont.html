@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alignment</title>
+  </head>
+  <style>
+    .container {
+      margin-right: auto;
+      margin: 20px;
+      align-content: center;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <p id="text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+        tempore cum eum enim deserunt eius modi delectus magni minus atque?
+      </p>
+    </div>
+    <button id="Upper">UpperCase</button>
+    <button id="Lower">LowerCase</button>
+    <button id="alignLeft">Left</button>
+    <button id="Center">Center</button>
+    <button id="alignRight">Right</button>
+    <br><br>
+    <input type="number" placeholder="password">
+  </body>
+  <script>
+    let p = document.querySelector("#text");
+    let Upper = document.querySelector("#Upper");
+    let Lower = document.querySelector("#Lower");
+    let alignLeft = document.querySelector("#alignLeft");
+    let Center = document.querySelector("#Center");
+    let alignRight = document.querySelector("#alignRight");
+    
+
+    function up() {
+      p.style.textTransform = "uppercase";
+    }
+
+    function low() {
+      p.style.textTransform = "lowercase";
+    }
+    function center() {
+      p.style.textAlign = "center";
+    }
+    function right() {
+      p.style.textAlign = "right";
+    }
+    function left() {
+      p.style.textAlign = "left";
+    }
+    Upper.addEventListener("click", up);
+    Lower.addEventListener("click", low);
+    alignLeft.addEventListener("click", left);
+    alignRight.addEventListener("click", right);
+    Center.addEventListener("click", center);
+
+  </script>
+</html>

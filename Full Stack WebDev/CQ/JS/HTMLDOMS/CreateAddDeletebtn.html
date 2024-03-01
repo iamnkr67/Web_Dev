@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating, Adding, Deleting</title>
+  </head>
+  <body>
+    <div id="parent"></div>
+    <button onclick="createElement('li')">Create</button>
+    <button onclick="addElement('li')">Add</button>
+    <button onclick="deleteElement()">Delete</button>
+  </body>
+
+  <script>
+    let counter = 1;
+
+    function createElement(tagName) {
+      let element = document.getElementById("child" + counter);
+      if (!element) {
+        element = document.createElement(tagName);
+        element.id = "child" + counter;
+        element.textContent = "Child " + counter;
+        counter++;
+        console.log(element);
+      }
+
+      return element;
+    }
+
+    function addElement(tagName) {
+      let element = createElement(tagName);
+      let parent = document.getElementById("parent");
+      parent.appendChild(element);
+    }
+
+    function deleteElement() {
+      if (counter === 1) return;
+      let element = document.getElementById("child" + (counter - 1));
+      element.parentNode.removeChild(element);
+      counter--;
+    }
+  </script>
+</html>

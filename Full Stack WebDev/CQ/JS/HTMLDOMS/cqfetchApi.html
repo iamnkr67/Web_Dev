@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Events</title>
+    <style>
+      .preview {
+        height: 100px;
+        width: 100%;
+        border: 1px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      button {
+        display: inline-block;
+        margin: 20px 0 20px 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview"></section>
+
+    <div class="button-bar">
+      <button data-color="red" style="background-color: red; color: white">
+        Red
+      </button>
+      <button
+        data-color="yellow"
+        style="background-color: yellow; color: black"
+      >
+        Yellow
+      </button>
+      <button data-color="green" style="background-color: green; color: white">
+        Green
+      </button>
+      <button
+        data-color="purple"
+        style="background-color: purple; color: white"
+      >
+        Purple
+      </button>
+    </div>
+
+    <script>
+      const buttonBar = document.querySelector(".button-bar");
+      const preview = document.querySelector(".preview");
+
+      buttonBar.addEventListener("click", function (event) {
+        if (event.target.tagName === "BUTTON") {
+          const color = event.target.dataset.color;
+          preview.style.backgroundColor = color;
+        }
+      });
+    </script>
+  </body>
+</html>

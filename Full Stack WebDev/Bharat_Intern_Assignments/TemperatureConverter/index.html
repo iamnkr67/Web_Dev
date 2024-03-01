@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #container {
+            margin: 50px auto;
+            width: 300px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Temperature Converter</h1>
+        <input type="number" id="celsiusInput" placeholder="Celsius">
+        <input type="number" id="fahrenheitInput" placeholder="Fahrenheit">
+        <button onclick="convertToCelsius()">Convert to Celsius</button>
+        <br><br>
+        <button onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+        <br><br>
+        <button onclick="clearFields()">All Clear</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertToCelsius() {
+            const fahrenheit = parseFloat(document.getElementById("fahrenheitInput").value);
+            const celsius = (fahrenheit - 32) * (5 / 9);
+            document.getElementById("celsiusInput").value = celsius.toFixed(2);
+            document.getElementById("result").innerText = `${fahrenheit}°F is ${celsius.toFixed(2)}°C`;
+        }
+
+        function convertToFahrenheit() {
+            const celsius = parseFloat(document.getElementById("celsiusInput").value);
+            const fahrenheit = (celsius * 9 / 5) + 32;
+            document.getElementById("fahrenheitInput").value = fahrenheit.toFixed(2);
+            document.getElementById("result").innerText = `${celsius}°C is ${fahrenheit.toFixed(2)}°F`;
+        }
+
+        function clearFields() {
+            document.getElementById("celsiusInput").value = "";
+            document.getElementById("fahrenheitInput").value = "";
+            document.getElementById("result").innerText = "";
+        }
+    </script>
+</body>
+</html>

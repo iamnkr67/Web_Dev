@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Table</title>
+</head>
+<body>
+  <label for="row">No. of Rows</label>
+  <input type="number" id="row" />
+  <label for="col">No. of Cols</label>
+  <input type="number" id="col" /> <br/><br/>
+ <center><button onclick="generateTable()">Generate Table</button></center> 
+  <br />
+
+  <table border="1">
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <script>
+    function generateTable() {
+      let rowInput = document.getElementById("row").value;
+      let colInput = document.getElementById("col").value;
+      let tbody = document.getElementById("tbody");
+      tbody.innerHTML = "";
+
+      for (let i = 0; i < rowInput; i++) {
+        let row = document.createElement("tr");
+
+        for (let j = 0; j < colInput; j++) {
+          let cell = document.createElement("td");
+          cell.textContent = `row${i + 1}, col${j + 1}`;
+          row.appendChild(cell);
+        }
+
+        tbody.appendChild(row);
+      }
+    }
+  </script>
+</body>
+</html>
