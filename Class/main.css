@@ -1,0 +1,14 @@
+.container{
+    display:grid;
+    color: black;
+    grid-template: repeat(3,10px);
+    gap: 10px;
+    
+}
+.container div{
+    
+}
+.box-1{
+    grid-row:1/2;
+
+}
